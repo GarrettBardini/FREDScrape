@@ -92,6 +92,8 @@ if __name__ == "__main__":
         FRED.FirstRun()
         while len(FRED.CategoryNew) >= 1: 
             FRED.CategoryNew = FRED.SubsequentRuns(FRED.CategoryNew,FRED.CategoryArchive,FRED.results,FRED.Output)
+        FRED.Output.to_csv(FRED.dir + r'\FRED_Output.csv', index=True)
+        quit() 
     except:
         FRED.Output.to_csv(FRED.dir + r'\FRED_Output.csv', index=True)
         quit() 
